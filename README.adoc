@@ -9,3 +9,22 @@
 
 == Maven Repository
   https://dl.bintray.com/endofmaster/maven
+
+=== Maven Import
+
+[source,xml]
+----
+ <dependency>
+     <groupId>com.endofmaster</groupId>
+     <artifactId>commons-rest</artifactId>
+     <version>1.0.0</version>
+     <type>pom</type>
+   </dependency>
+----
+
+=== Gradle Import
+
+[source,gradle]
+----
+ compile 'com.endofmaster:commons-rest:1.0.0'
+----
