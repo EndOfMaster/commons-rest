@@ -1,4 +1,4 @@
-package com.jifenke.rest.exceptionhandler;
+package com.endofmaster.rest.exceptionhandler;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.ErrorController;

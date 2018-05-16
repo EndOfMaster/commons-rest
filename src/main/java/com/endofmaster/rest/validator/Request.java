@@ -1,4 +1,4 @@
-package com.jifenke.rest.validator;
+package com.endofmaster.rest.validator;
 
 import org.springframework.validation.Errors;
 

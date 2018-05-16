@@ -1,10 +1,10 @@
 package demo;
 
 
-import com.jifenke.rest.exception.BadRequestException;
-import com.jifenke.rest.exception.NotFoundException;
-import com.jifenke.rest.exception.ServerException;
-import com.jifenke.rest.exception.ServiceUnavailableException;
+import com.endofmaster.rest.exception.BadRequestException;
+import com.endofmaster.rest.exception.NotFoundException;
+import com.endofmaster.rest.exception.ServerException;
+import com.endofmaster.rest.exception.ServiceUnavailableException;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

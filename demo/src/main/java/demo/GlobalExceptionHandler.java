@@ -1,6 +1,6 @@
 package demo;
 
-import com.jifenke.rest.exceptionhandler.RestExceptionHandler;
+import com.endofmaster.rest.exceptionhandler.RestExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**

@@ -1,9 +1,9 @@
-package com.jifenke.rest.exceptionhandler;
+package com.endofmaster.rest.exceptionhandler;
 
-import com.jifenke.rest.exception.BadRequestException;
-import com.jifenke.rest.exception.NotFoundException;
-import com.jifenke.rest.exception.ServerException;
-import com.jifenke.rest.exception.ServiceUnavailableException;
+import com.endofmaster.rest.exception.BadRequestException;
+import com.endofmaster.rest.exception.NotFoundException;
+import com.endofmaster.rest.exception.ServerException;
+import com.endofmaster.rest.exception.ServiceUnavailableException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.ConversionNotSupportedException;

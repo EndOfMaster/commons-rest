@@ -1,4 +1,4 @@
-package com.jifenke.rest.exceptionhandler;
+package com.endofmaster.rest.exceptionhandler;
 
 
 /**

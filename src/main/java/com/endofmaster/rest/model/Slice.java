@@ -1,4 +1,4 @@
-package com.jifenke.rest.model;
+package com.endofmaster.rest.model;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.util.Assert;

@@ -1,6 +1,6 @@
-package com.jifenke.rest;
+package com.endofmaster.rest;
 
-import com.jifenke.rest.exceptionhandler.DefaultErrorController;
+import com.endofmaster.rest.exceptionhandler.DefaultErrorController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,4 +1,4 @@
-package com.jifenke.rest;
+package com.endofmaster.rest;
 
 import org.springframework.context.annotation.Import;
 

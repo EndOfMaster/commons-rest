@@ -1,6 +1,6 @@
 package demo;
 
-import com.jifenke.rest.EnableCommonsRest;
+import com.endofmaster.rest.EnableCommonsRest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
