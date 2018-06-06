@@ -40,12 +40,6 @@ public class NoErrorCodeRestExceptionHandler extends ResponseEntityExceptionHand
 
     private static final Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<Object> handleUnhandledException(Exception e) {
-        logger.error("Handle Exception", e); // we shall log the error for developer, but hide details from user!
-        return new ResponseEntity<>("Internal server error.", new HttpHeaders(), INTERNAL_SERVER_ERROR);
-    }
-
     @ExceptionHandler(ServerException.class)
     public ResponseEntity<Object> handleServerException(ServerException e) {
         logger.error("Handle ServerException", e);
@@ -103,7 +97,7 @@ public class NoErrorCodeRestExceptionHandler extends ResponseEntityExceptionHand
     protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException e, HttpHeaders headers, HttpStatus status, WebRequest request) {
         logger.error("Handle HttpRequestMethodNotSupportedException", e);
         Set<HttpMethod> supportedMethods = e.getSupportedHttpMethods();
-        if (!supportedMethods.isEmpty()) {
+        if (supportedMethods != null && !supportedMethods.isEmpty()) {
             headers.setAllow(supportedMethods);
         }
         return new ResponseEntity<>(e.getLocalizedMessage(), headers, status);

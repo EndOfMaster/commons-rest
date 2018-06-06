@@ -1,5 +1,7 @@
 package com.endofmaster.rest.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.util.Assert;
 
@@ -10,17 +12,28 @@ import java.util.stream.Collectors;
 /**
  * @author ZM.Wang
  */
+@ApiModel("分页模型")
 public class Slice<T> {
 
+    @ApiModelProperty("总记录数")
     private long totalElements;
+    @ApiModelProperty("总页数")
     private int totalPages;
+    @ApiModelProperty("是否有下一页")
     private boolean hasNext;
+    @ApiModelProperty("是否有下一页")
     private boolean hasPrevious;
+    @ApiModelProperty("是否第一页")
     private boolean isFirst;
+    @ApiModelProperty("是否最后一页")
     private boolean isLast;
+    @ApiModelProperty("返回记录个数")
     private int number;
+    @ApiModelProperty("请求要求的记录个数")
     private int size;
+    @ApiModelProperty("该条件下总个数")
     private int numberOfElements;
+    @ApiModelProperty("内容list")
     private List<T> content;
 
     public long getTotalElements() {
