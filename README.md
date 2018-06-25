@@ -7,9 +7,11 @@
 ## Maven Repository
   https://dl.bintray.com/endofmaster/maven
 
-![image](https://img.shields.io/badge/maven-1.0.2-green.svg)
+version: ![image](https://img.shields.io/badge/maven-1.0.2-green.svg)
 
 ### Maven Import
+
+the x.y.z is version
 
 ```xml
  <dependency>
