@@ -1,26 +1,29 @@
 buildscript {
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/central' }
         jcenter()
-    }
-    dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'com.jfrog.bintray'
+plugins {
+    id 'maven'
+    id 'java-library'
+    id "com.jfrog.bintray" version "1.8.5"
+}
 
-group 'com.endofmaster'
-version '1.0.3'
+sourceCompatibility = '1.8'
+group = 'com.endofmaster'
+version ='1.0.4'
 
 repositories {
+    maven { url 'https://maven.aliyun.com/repository/central' }
+    mavenLocal()
     jcenter()
 }
 
 dependencies {
-    compileOnly 'org.springframework.boot:spring-boot-starter-web:2.1.5.RELEASE'
-    compileOnly 'io.springfox:springfox-swagger2:2.8.0'
+    compileOnly 'org.springframework.boot:spring-boot-starter-web:2.3.4.RELEASE'
+    compileOnly 'io.springfox:springfox-swagger2:3.0.0'
 }
 
 [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'

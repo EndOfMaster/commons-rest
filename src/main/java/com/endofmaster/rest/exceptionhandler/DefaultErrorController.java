@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author ZM.Wang
+ * @author YQ.Huang
  */
 @Controller
 @RequestMapping("${server.error.path:${error.path:/error}}")
