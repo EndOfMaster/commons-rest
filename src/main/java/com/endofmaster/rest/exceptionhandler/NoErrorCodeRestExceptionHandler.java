@@ -1,6 +1,7 @@
 package com.endofmaster.rest.exceptionhandler;
 
 import com.endofmaster.rest.exception.BadRequestException;
+import com.endofmaster.rest.exception.ForbiddenException;
 import com.endofmaster.rest.exception.NotFoundException;
 import com.endofmaster.rest.exception.ServerException;
 import com.endofmaster.rest.exception.ServiceUnavailableException;
@@ -50,6 +51,13 @@ public class NoErrorCodeRestExceptionHandler extends ResponseEntityExceptionHand
     public ResponseEntity<Object> handleServiceUnavailableException(ServiceUnavailableException e) {
         logger.error("Handle ServerException", e);
         return new ResponseEntity<>(e.getLocalizedMessage(), new HttpHeaders(), SERVICE_UNAVAILABLE);
+    }
+
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<Object> handleForbiddenException(ForbiddenException e) {
+        logger.error("Handle ForbiddenException", e);
+        ErrorMessage message = new ErrorMessage(ErrorCode.Forbidden, e.getLocalizedMessage());
+        return new ResponseEntity<>(message, new HttpHeaders(), FORBIDDEN);
     }
 
     @ExceptionHandler(BadRequestException.class)
