@@ -31,6 +31,9 @@ public class DefaultErrorController implements ErrorController {
         } else if (status == HttpStatus.INTERNAL_SERVER_ERROR) {
             String desc = request.getAttribute("javax.servlet.error.message").toString();
             message = new ErrorMessage(ErrorCode.InternalServerError, desc);
+        } else if (status == HttpStatus.UNAUTHORIZED) {
+            String desc = "this api need login";
+            message = new ErrorMessage(ErrorCode.Unauthorized, desc);
         } else {
             String desc = "Unknown error";
             message = new ErrorMessage(ErrorCode.InternalServerError, desc);
