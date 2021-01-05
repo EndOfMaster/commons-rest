@@ -56,8 +56,7 @@ public class NoErrorCodeRestExceptionHandler extends ResponseEntityExceptionHand
     @ExceptionHandler(ForbiddenException.class)
     public ResponseEntity<Object> handleForbiddenException(ForbiddenException e) {
         logger.error("Handle ForbiddenException", e);
-        ErrorMessage message = new ErrorMessage(ErrorCode.Forbidden, e.getLocalizedMessage());
-        return new ResponseEntity<>(message, new HttpHeaders(), FORBIDDEN);
+        return new ResponseEntity<>(e.getLocalizedMessage(), new HttpHeaders(), FORBIDDEN);
     }
 
     @ExceptionHandler(BadRequestException.class)
