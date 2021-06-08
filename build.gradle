@@ -1,14 +1,13 @@
 buildscript {
     repositories {
         maven { url 'https://maven.aliyun.com/repository/central' }
-        jcenter()
     }
 }
 
 plugins {
     id 'maven'
     id 'java-library'
-    id "com.jfrog.bintray" version "1.8.5"
+    id 'maven-publish'
 }
 
 sourceCompatibility = '11'
@@ -18,7 +17,6 @@ version ='1.0.4'
 repositories {
     maven { url 'https://maven.aliyun.com/repository/central' }
     mavenLocal()
-    jcenter()
 }
 
 dependencies {
@@ -28,22 +26,20 @@ dependencies {
 
 [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
-bintray {
-    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : '<bintrayUser>'
-    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : '<bintrayApiKey>'
-    configurations = ['archives']
-
-    dryRun = false //[Default: false] Whether to run this as dry-run, without deploying
-    publish = true //[Default: false] Whether version should be auto published after an upload
-    override = true //[Default: false] Whether to override version artifacts already published
-    pkg {
-        repo = 'maven'
-        name = project.name
-        userOrg = 'endofmaster'
-        licenses = ['Apache-2.0']
-        vcsUrl = "https://github.com/EndOfMaster/${project.name}/"
-        version {
-            name = project.version
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/EndOfMaster/maven-repo")
+            credentials {
+                username = project.findProperty("githubUser") ?: System.getenv("githubUser")
+                password = project.findProperty("githubKey") ?: System.getenv("githubKey")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
         }
     }
 }
